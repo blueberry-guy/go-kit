@@ -1,4 +1,4 @@
-module go-kit
+module github.com/blueberry-guy/go-kit
 
 go 1.22.3
 

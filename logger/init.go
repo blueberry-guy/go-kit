@@ -1,8 +1,9 @@
 package logger
 
 import (
-	"go-kit/env"
 	"os"
+
+	"github.com/blueberry-guy/go-kit/env"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
