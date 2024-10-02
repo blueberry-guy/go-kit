@@ -10,7 +10,7 @@ type viperConfigSource struct {
 	v *viper.Viper
 }
 
-func newViperConfigSourceWithParams(configName string, configType string, configPaths ...string) ConfigSource {
+func newViperConfigSourceWithParams(configName string, configType string, configPaths ...string) ConfigProvider {
 	v := viper.New()
 	v.SetConfigName(configName)
 	v.SetConfigType(configType)
@@ -30,7 +30,7 @@ func newViperConfigSourceWithParams(configName string, configType string, config
 	return &vcs
 }
 
-func newViperConfigSource() ConfigSource {
+func newViperConfigSource() ConfigProvider {
 	v := viper.New()
 	v.AutomaticEnv()
 	vcs := viperConfigSource{

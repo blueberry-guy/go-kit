@@ -2,7 +2,7 @@ package config
 
 import "github.com/blueberry-guy/go-kit/util"
 
-type ConfigSource interface {
+type ConfigProvider interface {
 	GetInt(key string) int
 	GetIntWithDefaultValue(key string, fallback int) int
 	GetInt32(key string) int32
@@ -22,7 +22,7 @@ type SourceParam struct {
 	Directories []string
 }
 
-func NewConfigSource(param *SourceParam) ConfigSource {
+func NewConfigSource(param *SourceParam) ConfigProvider {
 	if param == nil || (util.IsBlank(param.FileName) || util.IsBlank(param.FileExt) || len(param.Directories) == 0) {
 		return newViperConfigSource()
 	} else {
