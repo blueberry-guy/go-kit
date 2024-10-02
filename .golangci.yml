@@ -1,0 +1,6 @@
+linters:
+  enable:
+    - gofmt
+
+run:
+  timeout: 1m
