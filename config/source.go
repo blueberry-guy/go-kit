@@ -1,5 +1,7 @@
 package config
 
+import "github.com/blueberry-guy/go-kit/util"
+
 type ConfigSource interface {
 	GetInt(key string) int
 	GetIntWithDefaultValue(key string, fallback int) int
@@ -14,6 +16,16 @@ type ConfigSource interface {
 	GetStringWithDefaultValue(key string, fallback string) string
 }
 
-func NewConfigSource(configName string, configType string, configPaths ...string) ConfigSource {
-	return newViperConfigSourceWithParams(configName, configType, configPaths...)
+type SourceParam struct {
+	FileName    string
+	FileExt     string
+	Directories []string
+}
+
+func NewConfigSource(param *SourceParam) ConfigSource {
+	if param == nil || (util.IsBlank(param.FileName) || util.IsBlank(param.FileExt) || len(param.Directories) == 0) {
+		return newViperConfigSource()
+	} else {
+		return newViperConfigSourceWithParams(param.FileName, param.FileExt, param.Directories...)
+	}
 }
