@@ -22,7 +22,7 @@ type SourceParam struct {
 	Directories []string
 }
 
-func NewConfigSource(param *SourceParam) ConfigProvider {
+func NewConfigProvider(param *SourceParam) ConfigProvider {
 	if param == nil || (util.IsBlank(param.FileName) || util.IsBlank(param.FileExt) || len(param.Directories) == 0) {
 		return newViperConfigSource()
 	} else {
