@@ -10,6 +10,7 @@ type Type string
 const (
 	TypeProd  = Type("production")
 	TypeLocal = Type("local")
+	TypeTest  = Type("test")
 )
 
 func FromString(str string) (Type, error) {
