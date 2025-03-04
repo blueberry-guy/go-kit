@@ -1,6 +1,6 @@
 package csv
 
-import "github.com/blueberry-guy/go-kit/csv/internal"
+import "github.com/blueberry-guy/go-kit/pkg/csv/internal"
 
 func newV1Reader() Reader {
 	return &internal.GoCsvReaderImpl{}

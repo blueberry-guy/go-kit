@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/blueberry-guy/go-kit/csv"
+	"github.com/blueberry-guy/go-kit/pkg/csv"
 )
 
 // ExampleBasicWriting demonstrates basic CSV file writing

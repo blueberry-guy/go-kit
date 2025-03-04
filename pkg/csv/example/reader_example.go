@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/blueberry-guy/go-kit/csv"
+	"github.com/blueberry-guy/go-kit/pkg/csv"
 )
 
 // ExampleBasicReading demonstrates basic CSV file reading

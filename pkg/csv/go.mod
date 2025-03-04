@@ -1,4 +1,4 @@
-module github.com/blueberry-guy/go-kit/csv
+module github.com/blueberry-guy/go-kit/pkg/csv
 
 go 1.23.0
 
