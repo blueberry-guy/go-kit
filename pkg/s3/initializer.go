@@ -11,6 +11,7 @@ type Client interface {
 	Reader
 	Writer
 	Deleter
+	Presigner
 }
 
 // NewClient creates a new S3 client with all operations
@@ -30,5 +31,10 @@ func NewWriter(ctx context.Context, region string) (Writer, error) {
 
 // NewDeleter creates a new S3 deleter
 func NewDeleter(ctx context.Context, region string) (Deleter, error) {
+	return internal.NewS3Client(ctx, region)
+}
+
+// NewPresigner creates a new S3 presigner
+func NewPresigner(ctx context.Context, region string) (Presigner, error) {
 	return internal.NewS3Client(ctx, region)
 }
